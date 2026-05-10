@@ -1,23 +1,125 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container">
-            <div class="title">
-                <h1>Generate a <br><span id="g_title">random password</span></h1>
-                <p>Never use an inscure password again.<p>
-            </div>
-            <div class="btn_part">
-                <button id="g_btn">Generate Password</button>
-            </div>
-            <hr>
-            <div class="gntd_part">
-                <span id="generated_1">>nfJjy!dDvR&ial</span>
-                <span id="generated_2">>nfJjy!dDvR&ial</span>
-            </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Password Suite</title>
+    <link rel="stylesheet" href="Styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button id="menu-btn" class="hamburger-btn">☰</button>
+
+    <nav id="side-drawer" class="drawer">
+      <button id="close-btn" class="close-btn">&times;</button>
+      <ul class="drawer-links">
+        <li><a href="#" id="nav-generator">Password Generator</a></li>
+        <li><a href="#" id="nav-reviewer">Strength Reviewer</a></li>
+        <li><a href="#" id="nav-about">Our Team</a></li>
+      </ul>
+    </nav>
+
+    <div id="view-generator" class="container">
+      <div class="title">
+        <h1>Generate a <br /><span class="highlight">random password</span></h1>
+        <p>Never use an insecure password again !!</p>
+      </div>
+      <div class="btn_part">
+        <button id="g_btn">Generate Password</button>
+      </div>
+      <div class="settings_panel">
+        <div class="slider_group">
+          <label>Length: <span id="length_val">12</span></label>
+          <input type="range" id="length_slider" min="8" max="16" value="12" />
         </div>
-    </body>
+      </div>
+      <hr />
+      <div class="gntd_part">
+        <span id="generated_1"></span>
+      </div>
+    </div>
+
+    <div id="view-reviewer" class="container" style="display: none">
+      <div class="title">
+        <h1>Password <br /><span class="highlight">Reviewer</span></h1>
+        <p>Check how strong your password really is.</p>
+      </div>
+      <div class="input-group">
+        <input
+          type="text"
+          id="password-input"
+          placeholder="Type password here..."
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="strength-meter">
+        <div id="strength-bar"></div>
+      </div>
+
+      <div class="info-row">
+        <span>Strength:</span>
+        <span id="strength-text">Enter a password</span>
+      </div>
+
+      <div class="info-row">
+        <span>Estimated time to crack:</span>
+        <span id="crack-time-display">0 seconds</span>
+      </div>
+    </div>
+
+    <div id="view-about" class="about-page" style="display: none">
+      <div class="about-header">
+        <h1>The Creative <span class="highlight-blue">Team</span></h1>
+        <p>Meet the minds behind this project</p>
+      </div>
+
+      <div class="team-container">
+        <div class="member-card">
+          <div class="member-img-wrapper">
+            <div
+              class="member-img"
+              style="background-image: url(&quot;Images/Amr.jpeg&quot;)"
+            ></div>
+          </div>
+          <h3>Amr Sheqwara</h3>
+          <span class="role">Backend Developer</span>
+          <p class="member-id">ID: 202312340</p>
+        </div>
+
+        <div class="member-card">
+          <div class="member-img-wrapper">
+            <div
+              class="member-img"
+              style="background-image: url(&quot;Images/Mojahid.jpeg&quot;)"
+            ></div>
+          </div>
+          <h3>Mojahid Moqadi</h3>
+          <span class="role">Web Developer & AI expert</span>
+          <p class="member-id">ID: 202312573</p>
+        </div>
+
+        <div class="member-card">
+          <div class="member-img-wrapper">
+            <div
+              class="member-img"
+              style="background-image: url(&quot;Images/Ahmad.jpeg&quot;)"
+            ></div>
+          </div>
+          <h3>Ahmad Abufarha</h3>
+          <span class="role">Frontend Developer</span>
+          <p class="member-id">ID: 202311807</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="Index.js"></script>
+  </body>
 </html>
