@@ -30,7 +30,6 @@ document.getElementById("nav-about").onclick = (e) => {
   switchView("about");
 };
 
-// --- (Generator) ---
 const gBtn = document.getElementById("g_btn");
 const gDisplay = document.getElementById("generated_1");
 const slider = document.getElementById("length_slider");
@@ -61,7 +60,6 @@ gDisplay.onclick = () => {
 
 gDisplay.textContent = generate();
 
-// --- (Reviewer)  ---
 const pInput = document.getElementById("password-input");
 const sBar = document.getElementById("strength-bar");
 const sText = document.getElementById("strength-text");
