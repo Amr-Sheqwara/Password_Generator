@@ -1,4 +1,3 @@
-// --- عناصر التحكم والتبديل ---
 const menuBtn = document.getElementById("menu-btn");
 const closeBtn = document.getElementById("close-btn");
 const sideDrawer = document.getElementById("side-drawer");
@@ -79,14 +78,12 @@ pInput.oninput = () => {
     return;
   }
 
-  //  Score
   if (val.length >= 8) score++;
   if (val.length >= 12) score++;
   if (/[A-Z]/.test(val)) score++;
   if (/[0-9]/.test(val)) score++;
   if (/[^A-Za-z0-9]/.test(val)) score++;
 
-  // تحديد الألوان والحالة
   let colors = ["#ef4444", "#f59e0b", "#0fec07"];
   let status = ["Weak", "Medium", "Strong"];
   let i = score <= 2 ? 0 : score <= 4 ? 1 : 2;
@@ -96,7 +93,6 @@ pInput.oninput = () => {
   sText.textContent = status[i];
   sText.style.color = colors[i];
 
-  // حساب وقت الاختراق
   let poolSize = 0;
   if (/[a-z]/.test(val)) poolSize += 26;
   if (/[A-Z]/.test(val)) poolSize += 26;
@@ -114,16 +110,16 @@ pInput.oninput = () => {
   let timeFormatted = "";
 
   if (seconds < 60) {
-    colorIndex = 0; // seconds -> Red
+    colorIndex = 0;
     timeFormatted = Math.floor(seconds) + " " + timeStatus[0];
   } else if (seconds < 3600) {
-    colorIndex = 1; // minutes -> Orange
+    colorIndex = 1;
     timeFormatted = Math.floor(seconds / 60) + " " + timeStatus[1];
   } else if (seconds < 86400) {
-    colorIndex = 2; // hours -> Orange
+    colorIndex = 2;
     timeFormatted = Math.floor(seconds / 3600) + " " + timeStatus[2];
   } else {
-    colorIndex = 3; // years -> Green
+    colorIndex = 3;
     let yrs = Math.floor(seconds / (86400 * 365));
     timeFormatted = yrs > 1000000 ? "Centuries+" : yrs + " " + timeStatus[3];
   }
